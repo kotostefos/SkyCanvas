@@ -7,6 +7,9 @@ def get_sky_position():
 
     print("🌌 SkyCanvas Sky Engine")
 
+    latitude = LATITUDE
+    longitude = LONGITUDE
+
     print("\nLocation:")
     print(LOCATION_NAME)
 
