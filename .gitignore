@@ -5,6 +5,9 @@ __pycache__/
 # Virtual environments
 .venv/
 
+# Astronomy data
+*.bsp
+
 # macOS
 .DS_Store
 
