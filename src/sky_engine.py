@@ -1,20 +1,15 @@
 from datetime import datetime, timezone
 
 from skyfield.api import load, wgs84
-
+from config import LOCATION_NAME, LATITUDE, LONGITUDE
 
 def get_sky_position():
 
     print("🌌 SkyCanvas Sky Engine")
 
-    # Brussels coordinates
-    latitude = 50.8503
-    longitude = 4.3517
-
     print("\nLocation:")
-    print("Brussels, Belgium")
+    print(LOCATION_NAME)
 
-    # Load astronomy data
     print("\nLoading astronomical database...")
 
     planets = load('de421.bsp')
