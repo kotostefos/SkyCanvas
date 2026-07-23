@@ -38,6 +38,7 @@ def get_sky_position():
     print(f"Altitude: {altitude.degrees:.2f}°")
     print(f"Azimuth: {azimuth.degrees:.2f}°")
     print(f"Distance: {distance.km:.0f} km")
+
     # Sun position
     sun = planets['sun']
 
@@ -55,6 +56,30 @@ def get_sky_position():
         print("Status: Daylight")
     else:
         print("Status: Night")
+
+        # Planet positions
+    print("\nPlanets 🪐")
+
+    planet_names = [
+        "mercury",
+        "venus",
+        "mars",
+        "jupiter barycenter",
+        "saturn barycenter"
+    ]
+
+    for planet_name in planet_names:
+        planet = planets[planet_name]
+
+        planet_position = observer.at(now).observe(planet)
+
+        altitude, azimuth, distance = (
+            planet_position.apparent().altaz()
+        )
+
+        print(f"\n{planet_name.title()}")
+        print(f"Altitude: {altitude.degrees:.2f}°")
+        print(f"Azimuth: {azimuth.degrees:.2f}°")
 
 if __name__ == "__main__":
     get_sky_position()
