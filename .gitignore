@@ -7,6 +7,7 @@ __pycache__/
 
 # Astronomy data
 *.bsp
+data/
 
 # macOS
 .DS_Store
