@@ -38,7 +38,23 @@ def get_sky_position():
     print(f"Altitude: {altitude.degrees:.2f}°")
     print(f"Azimuth: {azimuth.degrees:.2f}°")
     print(f"Distance: {distance.km:.0f} km")
+    # Sun position
+    sun = planets['sun']
 
+    sun_position = observer.at(now).observe(sun)
+
+    sun_altitude, sun_azimuth, sun_distance = (
+        sun_position.apparent().altaz()
+    )
+
+    print("\nSun ☀️")
+    print(f"Altitude: {sun_altitude.degrees:.2f}°")
+    print(f"Azimuth: {sun_azimuth.degrees:.2f}°")
+
+    if sun_altitude.degrees > 0:
+        print("Status: Daylight")
+    else:
+        print("Status: Night")
 
 if __name__ == "__main__":
     get_sky_position()
