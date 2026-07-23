@@ -39,6 +39,11 @@ def get_sky_position():
     print(f"Azimuth: {azimuth.degrees:.2f}°")
     print(f"Distance: {distance.km:.0f} km")
 
+    return {
+    "moon_altitude": altitude.degrees,
+    "moon_azimuth": azimuth.degrees
+}
+
     # Sun position
     sun = planets['sun']
 
@@ -82,4 +87,5 @@ def get_sky_position():
         print(f"Azimuth: {azimuth.degrees:.2f}°")
 
 if __name__ == "__main__":
-    get_sky_position()
+    sky = get_sky_position()
+    print(sky)
