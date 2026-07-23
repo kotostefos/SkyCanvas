@@ -3,16 +3,19 @@ from datetime import datetime, timezone
 from skyfield.api import load, wgs84, Star
 from skyfield.data import hipparcos
 from config import LOCATION_NAME, LATITUDE, LONGITUDE
+from location import get_location
 
 def get_sky_position():
 
     print("🌌 SkyCanvas Sky Engine")
 
-    latitude = LATITUDE
-    longitude = LONGITUDE
+    location = get_location()
+
+    latitude = location["latitude"]
+    longitude = location["longitude"]
 
     print("\nLocation:")
-    print(LOCATION_NAME)
+    print(location["name"])
 
     print("\nLoading astronomical database...")
 
